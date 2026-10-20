@@ -1,0 +1,200 @@
+import { Movement, ScheduledPayment, BudgetCategory, Partner, PropertyManaged } from '../types';
+
+export const INITIAL_PARTNERS: Partner[] = [
+  {
+    id: 'partner-1',
+    name: 'Dani Agudelo',
+    role: 'Socio Fundador & Director General',
+    equityPercentage: 50,
+    totalContributed: 0,
+    totalWithdrawn: 0,
+    email: 'daniagudelo1905@gmail.com',
+    phone: '+57 305 233 2242',
+    avatarColor: '#e10b17', // Rojo MOAI
+  },
+  {
+    id: 'partner-2',
+    name: 'Mateo Restrepo',
+    role: 'Socio Director Comercial & Captaciones',
+    equityPercentage: 30,
+    totalContributed: 0,
+    totalWithdrawn: 0,
+    email: 'mateo@inmobiliariamoai.com',
+    phone: '+57 312 876 5432',
+    avatarColor: '#1e293b', // Slate
+  },
+  {
+    id: 'partner-3',
+    name: 'Carolina Correa',
+    role: 'Socia Inversionista & Finanzas',
+    equityPercentage: 20,
+    totalContributed: 0,
+    totalWithdrawn: 0,
+    email: 'carolina@inmobiliariamoai.com',
+    phone: '+57 300 456 7890',
+    avatarColor: '#d97706', // Amber
+  },
+];
+
+export const INITIAL_PROPERTIES: PropertyManaged[] = [
+  {
+    id: 'prop-1',
+    code: 'MOAI-101',
+    title: 'Penthouse Poblado Castropol',
+    type: 'Apartamento',
+    operation: 'Arriendo',
+    zone: 'El Poblado',
+    address: 'Calle 14 # 29-45, Medellín',
+    ownerName: 'Gabriel Jaime Ochoa',
+    ownerPhone: '+57 310 987 1122',
+    ownerBankInfo: 'Bancolombia Ahorros # 104-582910-12',
+    tenantName: 'Santiago Morales G.',
+    tenantPhone: '+57 318 445 2200',
+    rentalCanon: 0,
+    adminFeePercent: 9.5,
+    insurancePolicy: 'Seguros Sura',
+    policyExpiration: '',
+    status: 'Activo',
+  },
+  {
+    id: 'prop-2',
+    code: 'MOAI-102',
+    title: 'Apartamento Laureles 2do Parque',
+    type: 'Apartamento',
+    operation: 'Arriendo',
+    zone: 'Laureles',
+    address: 'Transversal 39B # 73-18, Medellín',
+    ownerName: 'Marta Cecilia Londoño',
+    ownerPhone: '+57 314 621 8899',
+    ownerBankInfo: 'Davivienda Ahorros # 045-871239-01',
+    tenantName: 'Valeria Jaramillo E.',
+    tenantPhone: '+57 301 223 9988',
+    rentalCanon: 0,
+    adminFeePercent: 10,
+    insurancePolicy: 'El Libertador',
+    policyExpiration: '',
+    status: 'Activo',
+  },
+  {
+    id: 'prop-3',
+    code: 'MOAI-201',
+    title: 'Casa Campestre Llanogrande',
+    type: 'Casa',
+    operation: 'Venta',
+    zone: 'Rionegro',
+    address: 'Parcelación San Antonio, Km 4',
+    ownerName: 'Inversiones Arboleda SAS',
+    ownerPhone: '+57 311 500 4433',
+    ownerBankInfo: 'Bancolombia Corriente # 001-987211-55',
+    salePrice: 0,
+    adminFeePercent: 3.0,
+    status: 'Activo',
+  },
+];
+
+export const INITIAL_BUDGETS: BudgetCategory[] = [
+  // Metas de Ingreso Mensual iniciales en 0 para que el usuario configure
+  {
+    id: 'b-inc-1',
+    category: 'Comisión por Venta Inmueble',
+    type: 'ingreso_meta',
+    monthlyBudget: 0,
+    alertThresholdPercent: 80,
+    notes: 'Meta mensual de comisiones por cierres de venta',
+  },
+  {
+    id: 'b-inc-2',
+    category: 'Comisión Administración Arriendo',
+    type: 'ingreso_meta',
+    monthlyBudget: 0,
+    alertThresholdPercent: 90,
+    notes: 'Ingreso recurrente por administración de cartera',
+  },
+  {
+    id: 'b-inc-3',
+    category: 'Intermediación Servicio Mudanza',
+    type: 'ingreso_meta',
+    monthlyBudget: 0,
+    alertThresholdPercent: 75,
+    notes: 'Comisión por mudanzas aliadas en Medellín',
+  },
+  {
+    id: 'b-inc-4',
+    category: 'Servicio Reformas y Acabados',
+    type: 'ingreso_meta',
+    monthlyBudget: 0,
+    alertThresholdPercent: 70,
+    notes: 'Supervisión y reformas integrales',
+  },
+  {
+    id: 'b-inc-5',
+    category: 'Avalúo Inmobiliario',
+    type: 'ingreso_meta',
+    monthlyBudget: 0,
+    alertThresholdPercent: 80,
+    notes: 'Avalúos comerciales certificados RAA',
+  },
+  // Presupuestos de Gasto Mensual en 0
+  {
+    id: 'b-exp-1',
+    category: 'Publicidad Portales (Finca Raíz, Metrocuadrado, Ads)',
+    type: 'gasto_presupuestado',
+    monthlyBudget: 0,
+    alertThresholdPercent: 85,
+    notes: 'Pauta en portales inmobiliarios y Meta Ads',
+  },
+  {
+    id: 'b-exp-2',
+    category: 'Comisión a Asesores / Corredores MOAI',
+    type: 'gasto_presupuestado',
+    monthlyBudget: 0,
+    alertThresholdPercent: 90,
+    notes: 'Pago de comisiones del equipo comercial',
+  },
+  {
+    id: 'b-exp-3',
+    category: 'Fotografía, Video y Dron Inmobiliario',
+    type: 'gasto_presupuestado',
+    monthlyBudget: 0,
+    alertThresholdPercent: 80,
+    notes: 'Producción audiovisual para inmuebles',
+  },
+  {
+    id: 'b-exp-4',
+    category: 'Sede / Coworking Medellín y Servicios',
+    type: 'gasto_presupuestado',
+    monthlyBudget: 0,
+    alertThresholdPercent: 95,
+    notes: 'Oficina administrativa El Poblado y servicios',
+  },
+  {
+    id: 'b-exp-5',
+    category: 'Licencias Software Inmobiliario y CRM',
+    type: 'gasto_presupuestado',
+    monthlyBudget: 0,
+    alertThresholdPercent: 90,
+    notes: 'Suscripción CRM y hosting',
+  },
+  {
+    id: 'b-exp-6',
+    category: 'Nómina Administrativa y Seguridad Social',
+    type: 'gasto_presupuestado',
+    monthlyBudget: 0,
+    alertThresholdPercent: 95,
+    notes: 'Equipo administrativo',
+  },
+  {
+    id: 'b-exp-7',
+    category: 'Impuestos (ICA Medellín, ReteFuente, IVA)',
+    type: 'gasto_presupuestado',
+    monthlyBudget: 0,
+    alertThresholdPercent: 90,
+    notes: 'Retenciones y tributos locales',
+  },
+];
+
+// Movimientos contables limpios en cero para que el usuario construya su base de datos
+export const INITIAL_MOVEMENTS: Movement[] = [];
+
+// Fechas programadas limpias para que el usuario registre sus vencimientos
+export const INITIAL_SCHEDULED_PAYMENTS: ScheduledPayment[] = [];

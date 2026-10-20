@@ -1,0 +1,6 @@
+{
+  "name": "MOAI-Kash | Sistema Financiero Inmobiliario",
+  "description": "Sistema de gestión contable, flujo de caja, programación de fechas de pago, control presupuestal y reparto de utilidades entre socios para Inmobiliaria MOAI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
